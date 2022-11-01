@@ -1,0 +1,108 @@
+.home {}
+
+.conner {
+    padding-left: 256px;
+    padding-right: 256px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    flex: 1;
+    float: left;
+    /* margin-top: 32px; */
+    /* background-color: red; */
+    margin-right: 200px;
+}
+
+.nav {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hov {
+    font-size: 16px;
+    color: #666;
+    width: 70px;
+    float: left;
+    text-align: center;
+    position: relative;
+    line-height: 97px;
+}
+
+.hov a:hover {
+    color: #efb22e;
+    padding-bottom: 30px;
+    border-bottom: 3px solid red;
+}
+
+.homeStyle {
+    /* width: 100%; */
+    background-color: aqua;
+}
+
+.continer {
+    height: 588px;
+    padding: 80px;
+    background: url('../../assets/img/backgroundConnect.jpg');
+}
+
+.leftStyle {
+    display: flex;
+    /* text-align: right; */
+    padding-left: 12%;
+    padding-right: 2%;
+}
+
+.rightStyle {
+    background-color: aquamarine;
+    display: inline-block;
+}
+
+.h2Style {
+    font-size: 38px;
+    color: #efb22e;
+}
+
+.textStyle {
+    font-size: 14px;
+    color: #343434;
+    line-height: 28px;
+    text-align: justify;
+    text-indent: 30px;
+}
+
+.ulStyle {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    margin-top:100px ;
+}
+
+.liStyle {
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    display: inline;
+    text-align: center;
+    line-height: 88px;
+    font-size: 16px;
+    border: 1px solid #efb22e;
+    margin: 0 0 -1px -1px;
+    z-index: 0;
+}
+.liStyle:hover {
+    background-color: #efb22e;
+   
+}
+.spanStyle:hover{
+    color: #fff;
+}
+
+.aStyle {
+    display: block;
+    text-decoration: none;
+}

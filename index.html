@@ -1,0 +1,816 @@
+<!DOCTYPE html><!--声明html版本编写指令-->
+<html lang="en">
+<head>
+    <!--页面编码格式-->
+    <meta charset="UTF-8">
+    <title>3D旋转相册</title>
+    <link rel="stylesheet" href="common.css"/>
+    <script  src="./Common.js"></script>
+    <style>
+        body {
+    overflow-x: hidden;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+.header {
+    height: 100px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    min-width: 1200px;
+}
+* {
+    font-family: "Microsoft YaHei", 微软雅黑;
+    margin: 0px auto;
+}
+.slideBox {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+[data-aos^=zoom][data-aos^=zoom].aos-animate {
+    opacity: 1;
+    transform: translateZ(0) scale(1);
+}
+[data-aos][data-aos][data-aos-easing=ease-in-sine], body[data-aos-easing=ease-in-sine] [data-aos] {
+    transition-timing-function: cubic-bezier(.47,0,.745,.715);
+}
+[data-aos][data-aos][data-aos-duration="400"], body[data-aos-duration="400"] [data-aos] {
+    transition-duration: .4s;
+}
+[data-aos^=zoom][data-aos^=zoom] {
+    opacity: 0;
+    transition-property: opacity,transform;
+}
+[data-aos=zoom-in] {
+    transform: scale(.6);
+}
+.gnfour {
+    height: 912px;
+    background: url(../images/index_13.jpg)center no-repeat;
+    position: relative;
+    margin-top: 90px;
+    box-sizing: border-box;
+    padding-top: 160px;
+}
+
+
+.gnthree {
+    padding: 70px 0px;
+}
+.container {
+    width: 90%;
+    max-width: 1400px;
+    min-width: 1200px;
+}
+.gntwo {
+    height: 588px;
+    background: url(../images/index_11.jpg)center no-repeat;
+    box-sizing: border-box;
+    padding: 80px 0px;
+}
+
+div {
+    display: block;
+}
+    </style>
+</head>
+<body data-aos-easing="ease-in-sine" data-aos-duration="400" data-aos-delay="0" style="" data-new-gr-c-s-check-loaded="14.1085.0" data-gr-ext-installed="">
+    <div class="header container">
+        <div class="logo">
+            <a href="/"><img src="images/logo.png"></a>
+        </div>
+        <div class="headr">
+            <div class="tab">
+                
+                <img src="images/ss.png" width="25">
+            </div>
+            <div class="sstan">
+                <div class="search">
+                    <form action="Search.asp" method="post">
+                        <input type="text" id="G_xm" name="G_xm" placeholder="">
+                        <button type="submit"><img src="images/index_06.png"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <ul class="nav">
+            <li><a href="/">首页</a></li>
+            <li class="hov"><a href="About.asp">走进国能</a>
+                <div class="two">
+                
+
+                    <a href="About.asp?id=56">集团简介</a>
+
+                
+
+                    <a href="About.asp?id=57">集团视频</a>
+
+                
+
+                    <a href="About.asp?id=58">领导介绍</a>
+
+                
+
+                    <a href="About.asp?id=59">董事局主席致词</a>
+
+                
+
+                    <a href="About.asp?id=60">集团价值观</a>
+
+                
+
+                    <a href="About.asp?id=61">集团战略</a>
+
+                
+
+                    <a href="About.asp?id=62">经营理念</a>
+
+                
+                </div>
+            </li>
+            <li class="hov"><a href="News.asp">新闻中心</a>
+                <div class="two">
+                
+                    <a href="News.asp?big=51">公司动态</a>
+                
+                    <a href="News.asp?big=52">媒体报道</a>
+                
+                    <a href="News.asp?big=53">国内资讯</a>
+                
+                    <a href="News.asp?big=54">国际资讯</a>
+                               
+                </div>
+            </li>
+            <li class="hov"><a href="Business.asp">业务领域</a>
+                <div class="two" style="transform: translateX(-60%);">
+                
+                    <a href="Business.asp?big=56">传统能源领域</a>
+                
+                    <a href="Business.asp?big=57">新能源领域</a>
+                
+                    <a href="Business.asp?big=58">海上保税船加油项目</a>
+                
+                    <a href="Business.asp?big=59">船用燃料油业务</a>
+                
+                    <a href="Business.asp?big=60">油页岩项目</a>
+                
+                    <a href="Business.asp?big=61">地产项目</a>
+                         
+                </div>
+            </li>
+            <li class="hov"><a href="Join.asp">人力资源</a>
+                <div class="two">
+                    <a href="Join.asp">招聘需求</a>
+                    <a href="JoinPage.asp">人才理念</a>               
+                </div>
+            </li>
+            <li class="hov"><a href="Contact.asp">联系我们</a>
+                <div class="two">
+                    <a href="Contact.asp">联系方式</a>
+                    <a href="Message.asp">在线留言</a>             
+                </div>
+            </li>
+        </ul>
+        <div class="navbg"></div>
+    </div>
+
+    <script type="text/javascript">
+        $(function(){
+            $(".hov").hover(function(){
+                $(this).find(".two").stop(true,true);
+                $(".navbg").stop(true,true);
+                $(".navbg").fadeIn(300);
+                $(this).find(".two").fadeIn(500);
+            },function(){
+                $(this).find(".two").stop(true,true);
+                $(".navbg").stop(true,true);
+                $(".navbg").fadeOut(300);
+                $(this).find(".two").fadeOut(300);
+            });
+        });
+
+        $(function(){
+            $(".search button").click(function(){
+            if($("#G_xm").val()==''){alert("请输入关键词！");$("#G_xm").focus();return false;}
+        });});
+
+        $(".headr img").mouseover(function(){
+            $(".sstan").slideDown();
+        })
+        $(".sstan").mouseleave(function(){
+            $(this).slideUp();
+        })
+    </script>
+     
+	<div class="slideBox">
+        <div class="bd">
+            <div class="tempWrap" style="overflow:hidden; position:relative; width:1969px"><ul style="width: 5907px; left: -1969px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
+                
+                <li style="float: left; width: 1969px;"><a target="_blank" href=""><img src="uploadfile/Link_Title/20201023118315872.jpg"></a></li>
+                
+                <li style="float: left; width: 1969px;"><a target="_blank" href=""><img src="uploadfile/Link_Title/202010261714347443.jpg"></a></li>
+                
+                <li style="float: left; width: 1969px;"><a target="_blank" href=""><img src="uploadfile/Link_Title/202010261714443164.jpg"></a></li>
+                
+            </ul></div>
+        </div>
+        <div class="hd"><ul><li class=""></li><li class="on"></li><li class=""></li></ul></div>
+        <a class="prev" href="javascript:void(0)"></a>
+        <a class="next" href="javascript:void(0)"></a>
+    </div>
+
+    <div class="gntwo aos-init aos-animate" data-aos="zoom-in">
+        <div class="container">
+            <div class="gn2l">
+                <div class="gn2top clearfix">
+                    <div class="gn2tl">
+                        <h2>About CIEG</h2>
+                        <h3>走进国能</h3>
+                    </div>
+                    <div class="gn2tr">
+                        <p>
+	&nbsp; &nbsp; &nbsp; &nbsp;中国国际能源集团控股有限公司(英文缩写CIEG )是特大型产业集团,旗下拥有众多控股公司、合资公司、合作企业。集团业务涉及广泛,涵盖原油、煤碳等传统能源板块,风能发电、光伏电站、甲醇汽油、合铜能源管理、绿色机电管家等新能源板块,科技产业园、能源交易中心、IT综合服务业、海上保税船加油、电力以及跨国并购重组、投资银行、基础设施建设、生态城市、土地整理、智慧城市等业务。
+</p>
+<p>
+	<br>
+</p>
+<p>
+	<span style="line-height:1;"></span> 
+</p>
+<p>
+	&nbsp; &nbsp; &nbsp; &nbsp; 2019年是新中国成立70周年,是决胜全面建成小康社会第一个百年奋斗目标的关键之年。中国国能在以习近平总书记为核心的党中央坚强领导下,坚持以习近平新时代中国特色社会主义思想为指导,圆满完成了年的目标任务。截止到2019年底,在中国国能67000名员工及490名高管团队的共同努力下,中国国能实现总资产(含合资和控股公司) 9630亿元人民币,销售收入(含合资和控股公司) 7921亿元人民币,利税(含合资和控股公司) 302亿元人民币。
+</p>
+                    </div>
+                </div>
+                <div class="gn2bot">
+                    <ul>
+                        <li><a href="About.asp?id=56">
+                            <p><img src="images/tab_13.png">
+                            <img src="images/tab2_13.png">
+                            集团简介</p></a>
+                        </li>
+                        <li><a href="About.asp?id=59">
+                            <p><img src="images/tab_15.png">
+                            <img src="images/tab2_15.png">
+                            主席致辞</p></a>
+                        </li>
+                        <li><a href="About.asp?id=60">
+                            <p><img src="images/tab_17.png">
+                            <img src="images/tab2_17.png">
+                            集团价值观</p></a>
+                        </li>
+                        <li><a href="About.asp?id=61">
+                            <p><img src="images/tab_19.png">
+                            <img src="images/tab2_19.png">
+                            集团战略</p></a>
+                        </li>
+                        <li><a href="About.asp?id=62">
+                            <p><img src="images/tab_21.png">
+                            <img src="images/tab2_21.png">
+                            经营理念</p></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="gn2r">
+                <div class="gn2rb">
+                    <h2>领导简介<span>/ Introduction of Leader</span></h2>
+                </div>
+                <div class="cont">
+                    <img src="images/tx_03.jpg" width="110" height="140">
+                    <h2>吴国迪</h2>
+                    <span>(Wu Guodi)</span>
+                    <p>中国国际能源集团控股有限公司</p>
+                    <p>党委书记、董事局主席</p>
+                </div>
+                <div class="text">
+                    中共党员，美国工商管理学院经济学博士；中国人民大学工商管理学硕士；并在长江商学、哈佛商学院、沃顿商学院、北京大学国学班、清华大学网络班进修。
+                </div>
+                <div class="more"><a href="About.asp?id=58">了解更多<img src="images/jt_07.png"></a></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="gnthree container clearfix aos-init" data-aos="zoom-in">
+        <div class="title">
+            <div class="titl">
+                <h2>News Center</h2>
+                <h3>新闻中心</h3>
+            </div>
+            <div class="titr">
+                <ul class="gn3b">
+                
+                    <li class="cur"><a href="News.asp?big=51">公司动态</a></li>
+                
+                    <li><a href="News.asp?big=52">媒体报道</a></li>
+                
+                    <li><a href="News.asp?big=53">国内资讯</a></li>
+                
+                    <li><a href="News.asp?big=54">国际资讯</a></li>
+                
+                </ul>
+                <div class="gn3a">
+                    
+                    <div class="more"><a href="News.asp?big=51">查看更多<img src="images/tit_03.png"></a></div>
+                    
+                    <div class="more"><a href="News.asp?big=52">查看更多<img src="images/tit_03.png"></a></div>
+                    
+                    <div class="more"><a href="News.asp?big=53">查看更多<img src="images/tit_03.png"></a></div>
+                    
+                    <div class="more"><a href="News.asp?big=54">查看更多<img src="images/tit_03.png"></a></div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="gn3tab">
+            
+            <ul class="gn3ul clearfix">
+                
+                <li>
+                    <div class="date">
+                        <p>29</p>
+                        <span>2020-09</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=1097"><h3>吴主席会见中国企业家协会会长王忠禹</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=1097">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>29</p>
+                        <span>2020-09</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=1096"><h3>河南省省长尹弘会见吴主席</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=1096">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>29</p>
+                        <span>2020-09</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=1095"><h3>国务院国资委党委书记、主任郝鹏会见吴主席</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=1095">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>29</p>
+                        <span>2020-09</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=1094"><h3>喜讯！中国国能领航城市建设有限公司荣耀登榜“2020中国企业500强榜单”</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=1094">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>11</p>
+                        <span>2020-02</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=1093"><h3>众志成城 共克时艰</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=1093">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>19</p>
+                        <span>2020-01</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=1092"><h3>中华人民共和国第十三届全国人民代表大会常务委员会副委员长，中国科学院副院长丁仲礼会见吴主</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=1092">READ MORE</a></div>
+                </li>
+                
+            </ul>
+            
+            <ul class="gn3ul clearfix">
+                
+                <li>
+                    <div class="date">
+                        <p>17</p>
+                        <span>2015-10</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=1122"><h3>董事局主席吴国迪应邀出席《中国-东盟商界领袖论坛》接受采访</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=1122">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>11</p>
+                        <span>2015-10</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=1121"><h3>中国国际能源集团控股有限公司荣获2015全球新能源企业500强第58位</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=1121">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>18</p>
+                        <span>2015-09</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=1120"><h3>中国国能董事局主席吴国迪出席2015中国-东盟商界领袖论坛</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=1120">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>01</p>
+                        <span>2015-04</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=1119"><h3>吴国迪：治理雾霾中国要尽快立法</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=1119">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>20</p>
+                        <span>2014-10</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=1118"><h3>中国国际能源集团控股有限公司荣获2014全球新能源企业500强第70名 </h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=1118">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>08</p>
+                        <span>2014-10</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=1117"><h3>“产业论坛：清洁能源的突围之道”主题论坛举行</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=1117">READ MORE</a></div>
+                </li>
+                
+            </ul>
+            
+            <ul class="gn3ul clearfix">
+                
+                <li>
+                    <div class="date">
+                        <p>14</p>
+                        <span>2020-10</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=2412"><h3>中国已实现经济增长与碳排放初步脱钩</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=2412">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>14</p>
+                        <span>2020-10</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=2411"><h3>2025年云南省绿色能源装机占比85% </h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=2411">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>14</p>
+                        <span>2020-10</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=2410"><h3>9月新能源车销量增逾六成 磷酸铁锂电池成趋势</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=2410">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>27</p>
+                        <span>2020-09</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=2409"><h3>中钢协：中国经济快速复苏带动钢铁需求显著增长 </h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=2409">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>27</p>
+                        <span>2020-09</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=2408"><h3>我国可再生能源投资连续五年超过1000亿美元</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=2408">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>27</p>
+                        <span>2020-09</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=2407"><h3>浙江省将建国际领先区域能源互联网 </h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=2407">READ MORE</a></div>
+                </li>
+                
+            </ul>
+            
+            <ul class="gn3ul clearfix">
+                
+                <li>
+                    <div class="date">
+                        <p>14</p>
+                        <span>2020-10</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=3179"><h3>国际能源署上调2020年全球天然气需求预测</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=3179">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>14</p>
+                        <span>2020-10</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=3178"><h3>专家预测：日本有望成为海上可再生能源增长的全球领导者</h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=3178">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>14</p>
+                        <span>2020-10</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=3177"><h3>国际油价9日下跌 </h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=3177">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>27</p>
+                        <span>2020-09</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=3176"><h3>国际油价17日有显著上涨 </h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=3176">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>27</p>
+                        <span>2020-09</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=3175"><h3>东地中海天然气论坛正式成立 </h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=3175">READ MORE</a></div>
+                </li>
+                
+                <li>
+                    <div class="date">
+                        <p>27</p>
+                        <span>2020-09</span>
+                    </div>
+                    <a href="NewsDetail.asp?id=3174"><h3>康菲石油称全球原油需求正复原 </h3></a>
+                    <div class="more"><a href="NewsDetail.asp?id=3174">READ MORE</a></div>
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+
+    <div class="gnfour">
+        <div class="gg container">
+            <img src="images/tab_30.jpg">
+        </div>
+        <div class="container aos-init" data-aos="zoom-in">
+            <div class="title">
+                <div class="titl">
+                    <h2>Business Area</h2>
+                    <h3>业务领域</h3>
+                </div>
+                <div class="titr">
+                    <div class="more"><a href="Business.asp">查看更多<img src="images/tit_03.png"></a></div>
+                </div>
+            </div>
+
+            <div class="izgsc">
+                <a href="Business.asp?big=56">
+                <div class="i_zgs_li js_wzgs" style="background:url(images/tab_32.jpg)center no-repeat;">
+                    <div class="gray">
+                        <p>传统能源</p>
+                    </div>
+                    <div class="i_cont">
+                        <h3>传统能源</h3>
+                        <p>中国经济的迅速发展同时伴随着对自然资源需求的日益加大，而当前约三分之一的中国原油消费量依然依靠进口。为了缓解这一矛盾...</p>
+                    </div>
+                </div></a>
+                <a href="Business.asp?big=57"><div class="i_zgs_li" style="background:url(images/1.jpg)center no-repeat;">
+                    <div class="gray">
+                        <p>新能源领域</p>
+                    </div>
+                    <div class="i_cont">
+                        <h3>新能源领域</h3>
+                        <p> 集团积极响应国家“十二五规划”政策，加快开发风电产业，有效利用风能资源。集团与合资公司根据地区风能资源丰富的特点，在吉林正在建设总装机100万千瓦的风力发电项目...</p>
+                    </div>
+                </div></a>
+                <a href="Business.asp?big=58"><div class="i_zgs_li" style="background:url(images/2.jpg)center no-repeat;">
+                    <div class="gray">
+                        <p>海上保税船加油项目</p>
+                    </div>
+                    <div class="i_cont">
+                        <h3>海上保税船加油项目</h3>
+                        <p>  保税油加注指的是国家按照国际通行惯例，为国际航行的，目的港为境外港口并在中国靠港的中、外船舶，在海关监管下提供免税油品供应的行为，该行为视同出口。保税油经营企业可直接从国际进口燃油...</p>
+                    </div>
+                </div></a>
+                <a href="Business.asp?big=59"><div class="i_zgs_li" style="background:url(images/3.jpg)center no-repeat;">
+                    <div class="gray">
+                        <p>船用燃料油业务</p>
+                    </div>
+                    <div class="i_cont">
+                        <h3>船用燃料油业务</h3>
+                        <p>目前集团已经合资了一家国内领先的船舶燃料供应商，2011年加工销售船舶燃料超过20万吨，2012年预计可以达到30万吨，目前主要以中小型船舶所需的1#和4#船燃为主...</p>
+                    </div>
+                </div></a>
+                <a href="Business.asp?big=60"><div class="i_zgs_li" style="background:url(images/4.jpg)center no-repeat;">
+                    <div class="gray">
+                        <p>油页岩项目</p>
+                    </div>
+                    <div class="i_cont">
+                        <h3>油页岩项目</h3>
+                        <p>集团与合资公司已经在巴西IRATI盆地开展油页岩的开采、提炼页岩油业务。目前已经组建了一只经验丰富的团队，该项目团队拥有超过25年的熟练的页岩油开采提炼技术和项目开发经验...</p>
+                    </div>
+                </div></a>
+                <a href="Business.asp?big=61"><div class="i_zgs_li" style="background:url(images/5.jpg)center no-repeat;">
+                    <div class="gray">
+                        <p>地产项目</p>
+                    </div>
+                    <div class="i_cont">
+                        <h3>地产项目</h3>
+                        <p>集团的商业地项目产包含以大型购物中心为主体的商业中心的合资与开发、写字楼、公寓和住宅的投资与开发。集团与国内知名的商业地产公司在上海共同合资建设世贸商城，并在温州投资建设城市商业合体项目...</p>
+                    </div>
+                </div></a>
+            </div> 
+
+        </div>
+    </div>
+
+    <div class="footer aos-init" data-aos="zoom-in">
+        <div class="container">
+            <div class="fot2">
+                <a href=""><img src="images/index_18.png"></a>
+            </div>
+            <div class="fot3">
+                <ul>
+                    <li>
+                        <h3>走进国能</h3>
+                    
+
+                        <p><a href="About.asp?id=56">集团简介</a></p>
+
+                    
+
+                        <p><a href="About.asp?id=57">集团视频</a></p>
+
+                    
+
+                        <p><a href="About.asp?id=58">领导介绍</a></p>
+
+                    
+
+                        <p><a href="About.asp?id=59">董事局主席致词</a></p>
+
+                    
+
+                        <p><a href="About.asp?id=60">集团价值观</a></p>
+
+                    
+
+                        <p><a href="About.asp?id=61">集团战略</a></p>
+
+                    
+
+                        <p><a href="About.asp?id=62">经营理念</a></p>
+
+                    
+                    </li>
+                    <li>
+                        <h3>业务领域</h3>
+                    
+                        <p><a href="Business.asp?big=56">传统能源领域</a></p>
+                    
+                        <p><a href="Business.asp?big=57">新能源领域</a></p>
+                    
+                        <p><a href="Business.asp?big=58">海上保税船加油项目</a></p>
+                    
+                        <p><a href="Business.asp?big=59">船用燃料油业务</a></p>
+                    
+                        <p><a href="Business.asp?big=60">油页岩项目</a></p>
+                    
+                        <p><a href="Business.asp?big=61">地产项目</a></p>
+                           
+                    </li>
+                    <li>
+                        <h3>新闻中心</h3>
+                    
+                        <p><a href="News.asp?big=51">公司动态</a></p>
+                    
+                        <p><a href="News.asp?big=52">媒体报道</a></p>
+                    
+                        <p><a href="News.asp?big=53">国内资讯</a></p>
+                    
+                        <p><a href="News.asp?big=54">国际资讯</a></p>
+                          
+                    </li>
+                    <li>
+                        <h3>人力资源</h3>
+                        <p><a href="Join.asp">招聘需求</a></p>
+                        <p><a href="JoinPage.asp">人才理念</a></p>   
+                    </li>
+                    <li>
+                        <h3>联系我们</h3>
+                        <p><a href="Contact.asp">联系方式</a></p>
+                        <p><a href="Message.asp">在线留言</a></p>   
+                        <p><a href="http://mail.cieg.com.cn/accounts/login?domain=cieg.com.cn" target="_blank">企业邮箱</a></p>   
+                        
+                    </li>
+                </ul>
+                <div class="fot3r">
+                    <div class="ewm">
+                        <img src="/Editor/attached/image/20201023/2020102310500361361.png" alt="">
+                        <p>扫码关注公众号</p>
+                    </div>
+                    <div class="cont">
+                        <p>
+	电话：010-85871616
+</p>
+<p>
+	传真：010-85871617
+</p>
+<p>
+	邮箱：cieg@cieg.com.cn
+</p>
+<p>
+	网址：www.cieg.com.cn
+</p>
+<p>
+	地址：北京市东城区东总布胡同58号能天润财富中心B11层A
+</p>
+                    </div>
+                </div>
+            </div>
+            <div class="fot4">
+                <h2>友情链接LINK：</h2>
+                <ul>
+                
+                    <li><a href="http://www.chinaecetc.com/index.aspx" target="_blank">浙江华东能源交易中心</a></li>
+                
+                    <li><a href="http://www.sinochem.com/" target="_blank">中国中化集团公司</a></li>
+                
+                    <li><a href="http://www.cnpc.com.cn/cnpc/index.shtml" target="_blank">中国石油天然气集团</a></li>
+                
+                    <li><a href="http://www.s-fcc.com.cn/" target="_blank">中国石化集团公司</a></li>
+                
+                    <li><a href="http://www.sgcc.com.cn/" target="_blank">中国电力集团</a></li>
+                
+                </ul>
+            </div>
+        </div>
+        <div class="copy">
+            <div class="container">
+                <p><span style="background-color:#FFFFFF;"></span><span style="color:#CCCCCC;">COPYRIGHT 2010-2020 国际能源集团网 版权所有 </span><a href="https://beian.miit.gov.cn/" target="_blank"><span style="color:#CCCCCC;"> | 备案号：浙ICP备19018723号</span></a><span style="color:#CCCCCC;">&nbsp;&nbsp;</span><span style="color:#FFFFFF;"><span style="color:#FFFFFF;"><a href="http://www.wangzhan360.com/" target="_blank"><span style="color:#CCCCCC;">技术维护：北京网站建设</span></a></span></span></p>
+                <span><a href="">法律声明</a> | <a href="">隐私与安全</a></span>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="http://c.ibangkf.com/i/c-wangzhan360.js"></script>
+
+
+
+
+
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.3.js"></script>
+    <script type="text/javascript" src="js/aos.js"></script>
+    <script>       
+        AOS.init({
+            // offset: 120,
+            // duration: 600,
+            easing: 'ease-in-sine',
+            // delay: 50,
+            // once: true,   
+        });
+
+	    jQuery(".slideBox").slide({mainCell:".bd ul",autoPage:"<li></li>",titCell:".hd ul",effect:"left",autoPlay:true,interTime:5000,mouseOverStop:false});
+
+        $(function(){
+            $(".i_zgs_li").mouseover(function(){
+                $(".i_zgs_li").removeClass('js_wzgs');
+                $(this).addClass('js_wzgs');
+            });  
+        });
+
+        $(".gn3b li").mouseover(function(){
+            $(this).addClass("cur").siblings(".gn3b li").removeClass("cur");   
+            var q=$(this).index();
+            $(".gn3ul").eq(q).fadeIn().siblings(".gn3ul").fadeOut();
+            $(".gn3a .more").eq(q).show().siblings(".gn3a .more").hide();
+        });
+    </script>
+    
+
+<div id="fatkun-drop-panel">
+        <a id="fatkun-drop-panel-close-btn">×</a>
+            <div id="fatkun-drop-panel-inner">
+                <div class="fatkun-content">
+                    <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+                    <div class="fatkun-title">拖拽到此处</div>
+                    <div class="fatkun-desc">图片将完成下载</div>
+                </div>
+            </div>
+    </div></body>
+</html>

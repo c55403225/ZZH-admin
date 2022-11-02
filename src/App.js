@@ -8,7 +8,6 @@ import store from "./store";
 
 import Header from "./components/header";
 import Footer from "./components/footer";
-import PlayerBar from "./page/player/playerBar";
 import { outputStaticUrl } from "./config/outputStaticUrl";
 
 export default memo(function App() {
@@ -18,7 +17,6 @@ export default memo(function App() {
         <Header></Header>
         {renderRoutes(routes)}
         <Footer></Footer>
-        <PlayerBar></PlayerBar>
       </BrowserRouter>
     </Provider>
   );

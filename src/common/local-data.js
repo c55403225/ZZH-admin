@@ -40,19 +40,23 @@ export const headerLinks = [
 export const footerLinks = [
   {
     title: "服务条款",
-    link: "https://st.music.163.com/official-terms/service"
+    // link: "https://st.music.163.com/official-terms/service"
+    link: "#"
   },
   {
     title: "隐私政策",
-    link: "https://st.music.163.com/official-terms/privacy"
+    // link: "https://st.music.163.com/official-terms/privacy"
+    link: "#"
   },
   {
     title: "儿童隐私政策",
-    link: "https://st.music.163.com/official-terms/children"
+    // link: "https://st.music.163.com/official-terms/children"
+    link: "#"
   },
   {
     title: "版权投诉指引",
-    link: "https://music.163.com/st/staticdeal/complaints.html"
+    // link: "https://music.163.com/st/staticdeal/complaints.html"
+    link: "#"
   },
   {
     title: "意见反馈",
@@ -79,7 +83,7 @@ export const footerImages = [
 export const dicoverMenu = [
   {
     title: "推荐",
-    link: "/discover/recommend"
+    link: "/discover/continer"
   },
   {
     title: "排行榜",

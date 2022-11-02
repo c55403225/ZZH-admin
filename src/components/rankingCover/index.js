@@ -1,17 +1,12 @@
 import React, { memo } from "react";
 import { useDispatch } from "react-redux";
 
-import { getSongDetailAction } from "../../page/player/store";
-
 import { TopRankingWrapper } from "./style";
 
 export default memo(function RankingCover(props) {
   const { info } = props;
   const { tracks = [] } = info;
   const dispatch = useDispatch();
-  const addPlayList = (item) => {
-    dispatch(getSongDetailAction(item.id));
-  };
 
   return (
     <TopRankingWrapper>
@@ -40,7 +35,6 @@ export default memo(function RankingCover(props) {
                 <div className="operate">
                   <button
                     className="btn sprite_02 play"
-                    onClick={(e) => addPlayList(item)}
                   ></button>
                   <button className="btn sprite_icon2 addto"></button>
                   <button className="btn sprite_02 favor"></button>

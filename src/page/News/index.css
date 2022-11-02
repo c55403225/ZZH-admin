@@ -1,0 +1,24 @@
+/*定义动画*/
+@keyframes myfirst
+{
+0%   {background: rgb(148, 172, 238);}
+100% {background: rgb(235, 245, 235);}
+}
+/*使用动画：将动画绑定元素上*/
+.news {
+animation: myfirst 1s;
+-moz-animation: myfirst 1s;	/* Firefox */
+-webkit-animation: myfirst 1s;	/* Safari 和 Chrome */
+-o-animation: myfirst 1
+
+s;	/* Opera */
+}
+
+
+.news{
+    padding: 0 0 70px 10%;
+}
+.h2Style {
+    font-size: 38px;
+    color: #efb22e;
+}

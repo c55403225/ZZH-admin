@@ -14,8 +14,9 @@ export const AppFooterWrapper = styled.div`
 `
 
 export const FooterLeft = styled.div`
-  padding-top: 15px;
-  line-height: 24px;
+  padding-top: 8%;
+  line-height: 30px;
+  font-size:18px;
 
   .link {
     a {

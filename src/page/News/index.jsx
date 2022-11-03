@@ -179,7 +179,7 @@ export default memo(function News() {
                 </div>
             </div>
             <Row>
-                <Cards value={value} />
+                <Cards value={value} key={value}/>
             </Row>
         </div>
     )

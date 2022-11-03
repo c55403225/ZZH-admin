@@ -125,7 +125,7 @@ export default memo(function Continer() {
                         </div>
 
                     </Col>
-                    <Col span={8} className='rightStyle'>
+                    <Col span={8} >
                         <div className='briefIntroduction'>
                             <div>
                                 <span className='leaders'>领导简介</span><span className='leadersEnglish'>/ Introduction of Leader</span>
@@ -133,7 +133,7 @@ export default memo(function Continer() {
                             <div className='companyProfile'>
                                 <img src={image1} style={{ width: '130px', height: '140px', paddingLeft: '20px' }} />
                                 <div>
-                                    <h2 style={{ fontSize: '26px', color: '#fff', marginLeft: '10px' }}>陈稳</h2>
+                                    <h2 style={{ fontSize: '26px', color: '#fff', marginLeft: '10px' }}>陈东明</h2>
                                     <p style={{ fontSize: '14px', color: '#fff', marginLeft: '10px' }}>(Chen Wen)</p>
                                     <p style={{ fontSize: '14px', color: '#fff', marginTop: '10px', marginLeft: '10px' }}>重庆中仄灏新能源科技(集团)有限责任公司</p>
                                 </div>
@@ -152,10 +152,9 @@ export default memo(function Continer() {
             </div>
             {/* banner图 */}
             <div style={{display:'flex',alignItems:'center',justifyContent: 'center',marginBottom:'90px'}}>
-            <img src={Cooperation}  style={{}}/>
+            <img src={Cooperation}  />
            </div>
                {/* 合作共赢 */}
-         
                <RelatedBusiness />
             {/* 新闻中心 */}
            <News />

@@ -2,12 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 
 import Discover from '../page/discover'
-import newAlbum from '../page/discover/c-pages/recommend/c-page/newAlbum'
 import Artist from '../page/discover/c-pages/artist'
-import Djradio from '../page/discover/c-pages/djradio'
-import Ranking from '../page/discover/c-pages/ranking'
-import Songs from '../page/discover/c-pages/songs'
-import Recommend from '../page/discover/c-pages/recommend'
 
 import Friend from '../page/friend'
 import Mine from '../page/mine'
@@ -35,44 +30,37 @@ const routes = [
                     <Redirect to="/discover/continer" />
                 )
             },
-            // {
-            //     path: "/discover/continer",
-            //     component: Continer
-            // },
-            // {
-            //     path: "/discover/ranking",
-            //     component: Ranking
-            // },
-            // {
-            //     path: "/discover/songs",
-            //     component: Songs
-            // },
-            // {
-            //     path: "/discover/djradio",
-            //     exact: true,
-            //     component: Djradio
-            // },
             {
                 path: "/discover/artist",
                 component: Artist
-            },
-            // {
-            //     path: "/discover/album",
-            //     component: newAlbum
-            // },
-            // {
-            //     path: "/discover/player",
-            //     component: Player
-            // }
+            }
         ]
     },
+//  "集团简介",
     {
-        path: '/friend',
-        component: Friend,
+        path: '/groupProfile',
+        component: Mine,
     },
+    // 集团视频
     {
-        path: '/mine',
+        path: '/groupIdeo',
+        component: Mine,
+    },
+    // 经营理念
+    {
+        path: '/managementIdea',
+        component: Mine,
+    },
+    // 业务领域
+    {
+        path: '/businessArea',
+        component: Mine,
+    },
+    // 联系我们
+    {
+        path: '/contactUs',
         component: Mine,
     }
+    
 ]
 export default routes

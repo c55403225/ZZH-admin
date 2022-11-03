@@ -8,28 +8,6 @@ import { SearchOutlined } from '@ant-design/icons'
 
 const imageLogo = require('../../assets/img/logo.png');
 
-const liArr = [
-    {
-        name: '首页',
-        index: 0
-    },
-    {
-        name: '集团简介',
-        index: 1
-    },
-    {
-        name: '经营理念',
-        index: 2
-    },
-    {
-        name: '业务领域',
-        index: 3
-    },
-    {
-        name: '联系我们',
-        index: 4
-    }
-]
 export default memo(function Header() {
 
     return (

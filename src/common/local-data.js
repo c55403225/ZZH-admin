@@ -2,39 +2,28 @@ export const headerLinks = [
   {
     title: "首页",
     link: "/discover"
+    
   },
   {
     title: "集团简介",
-    link: "/mine"
+    link: "/groupProfile"
   },
   {
     title: "集团视频",
-    link: "/friend"
+    link: "/groupIdeo"
   },
   {
     title: "经营理念",
-    link: "/friend"
+    link: "/managementIdea"
   },
   {
     title: "业务领域",
-    link: "/friend"
+    link: "/businessArea"
   },
   {
     title: "联系我们",
-    link: "/friend"
+    link: "/contactUs"
   },
-  // {
-  //   title: "经营理念",
-  //   link: "https://music.163.com/store/product"
-  // },
-  // {
-  //   title: "音乐人",
-  //   link: "https://music.163.com/nmusician/web/index#/"
-  // },
-  // {
-  //   title: "下载客户端",
-  //   link: "https://music.163.com/#/download"
-  // }
 ]
 
 export const footerLinks = [

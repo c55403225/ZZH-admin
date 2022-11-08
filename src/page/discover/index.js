@@ -1,6 +1,7 @@
 import React, { memo, useState } from 'react';
 import { Carousel, Col, Row } from 'antd';
 import News from '../News';
+import { NavLink } from "react-router-dom";
 import RelatedBusiness from '../RelatedBusiness';
 
 import './index.css'
@@ -33,7 +34,7 @@ const contentStyle = {
     textAlign: 'center',
     background: '#364d79',
 };
-export default memo(function Continer() {
+export default memo(function Continer(props) {
     const [icon1, useIcon1] = useState(icon111);
     const [icon2, useIcon2] = useState(icon222);
     const [icon3, useIcon3] = useState(icon333);
@@ -62,7 +63,7 @@ export default memo(function Continer() {
                 {/* 中间部分公司简介 */}
                 <Row>
                     {/* left */}
-                    <Col span={16} className='leftStyle'>
+                    <Col span={24} className='leftStyle'>
                         <Row>
                             <Col span={8} >
                                 <div style={{ display: 'inline-block', width: '290px' }}>
@@ -77,7 +78,7 @@ export default memo(function Continer() {
                                         传统能源板块,风能发电、光伏电站、甲醇汽油、合铜能源管理、绿色机电管家等新能源板块,科技产业园、能源交易中心、IT综合服务业、海上保税船加油、电
                                         力以及跨国并购重组、投资银行、基础设施建设、生态城市、土地整理、智慧城市等业务。
                                     </p>
-                                    <p className='textStyle'>
+                                    <p className='textStyle' style={{    marginBottom: '100px'}}>
                                         2019年是新中国成立70周年,是决胜全面建成小康社会第一个百年奋斗目标的关键之年。中国国能在以习近平总书记为核心的党中央
                                         坚强领导下,坚持以习近平新时代中国特色社会主义思想为指导,圆满完成了年的目标任务。截止到2019年底,在中国国能67000名员
                                         工及490名高管团队的共同努力下,中国国能实现总资产(含合资和控股公司) 9630亿元人民币,销售收入(含合资和控股公司) 7921亿元人民币,利税(含合资和控股公司) 302亿元人民币。
@@ -89,23 +90,25 @@ export default memo(function Continer() {
                         {/* tab */}
                         <div >
                             <ul className='ulStyle'>
-                                <li className='liStyle' onMouseOver={() => useIcon1(icon11)} onMouseOut={() => useIcon1(icon111)}>
-                                    <a href='' className='aStyle'>
+                                <li className='liStyle' onMouseOver={() => useIcon1(icon11)} onMouseOut={() => useIcon1(icon111)} onClick={()=>  props.history.push('/groupProfile')}>
+                                    <a href='' className='aStyle' >
                                         <span className='spanStyle'>
                                             <img src={icon1} />
                                             集团简介
                                         </span>
                                     </a>
                                 </li>
-                                <li className='liStyle' onMouseOver={() => useIcon2(icon22)} onMouseOut={() => useIcon2(icon222)}>
-                                    <a href='' className='aStyle'>
+                                <li className='liStyle' onMouseOver={() => useIcon2(icon22)} onMouseOut={() => useIcon2(icon222)} onClick={()=>  props.history.push('/groupProfile')}>
+                                    <a onClick={() => history.push({
+                                    pathname: "/groupProfile"
+                                })} href='' className='aStyle'>
                                         <span className='spanStyle'>
                                             <img src={icon2} />
                                             集团战略
                                         </span>
                                     </a>
                                 </li>
-                                <li className='liStyle' onMouseOver={() => useIcon3(icon33)} onMouseOut={() => useIcon3(icon333)}>
+                                <li className='liStyle' onMouseOver={() => useIcon3(icon33)} onMouseOut={() => useIcon3(icon333)} onClick={()=>  props.history.push('/groupProfile')}>
                                     <a href='' className='aStyle'>
                                         <span className='spanStyle'>
                                             <img src={icon3} />
@@ -113,7 +116,7 @@ export default memo(function Continer() {
                                         </span>
                                     </a>
                                 </li>
-                                <li className='liStyle' onMouseOver={() => useIcon5(icon55)} onMouseOut={() => useIcon5(icon555)}>
+                                <li className='liStyle' onMouseOver={() => useIcon5(icon55)} onMouseOut={() => useIcon5(icon555)} onClick={()=>  props.history.push('/managementIdea')}>
                                     <a href='' className='aStyle'>
                                         <span className='spanStyle'>
                                             <img src={icon5} />
@@ -125,7 +128,7 @@ export default memo(function Continer() {
                         </div>
 
                     </Col>
-                    <Col span={8} >
+                    {/* <Col span={8} >
                         <div className='briefIntroduction'>
                             <div>
                                 <span className='leaders'>领导简介</span><span className='leadersEnglish'>/ Introduction of Leader</span>
@@ -147,18 +150,18 @@ export default memo(function Continer() {
                             <a style={{ textDecoration: 'none', color: '#fff', fontSize: '14px', paddingLeft: '20px', marginTop: '20px' }}>了解更多 <img src={long} /></a>
                         </div>
 
-                    </Col>
+                    </Col> */}
                 </Row>
             </div>
             {/* banner图 */}
-            <div style={{display:'flex',alignItems:'center',justifyContent: 'center',marginBottom:'90px'}}>
-            <img src={Cooperation}  />
-           </div>
-               {/* 合作共赢 */}
-               <RelatedBusiness />
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '90px' }}>
+                <img src={Cooperation} />
+            </div>
+            {/* 合作共赢 */}
+            <RelatedBusiness />
             {/* 新闻中心 */}
-           <News />
-       
+            <News  {...props}/>
+
         </div>
     )
 })

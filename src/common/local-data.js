@@ -13,9 +13,21 @@ export const headerLinks = [
     link: "/groupIdeo"
   },
   {
+    title: "集团价值观",
+    link: "/groupValues"
+  },
+  {
+    title: "集团战略",
+    link: "/groupStrategy"
+  },
+  {
     title: "经营理念",
     link: "/managementIdea"
   },
+  // {
+  //   title: "新闻中心",
+  //   link: "/newsCenter"
+  // },
   {
     title: "业务领域",
     link: "/businessArea"

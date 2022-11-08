@@ -19,6 +19,7 @@ const News = (props) => {
                                 background: 'rgba(0,0,0,.025)'
                             }}
                             hoverable={true}
+                            onClick={()=>props.history.push('/newsCenter')}
                         >
                             <div className="leftCard">
                                 <span className="timeDate">{item.data}</span>

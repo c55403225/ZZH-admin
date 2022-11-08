@@ -6,6 +6,8 @@ import Artist from '../page/discover/c-pages/artist'
 
 import Friend from '../page/friend'
 import Mine from '../page/mine'
+import NewsChild from '../page/newChild'
+
 
 
 const routes = [
@@ -46,9 +48,24 @@ const routes = [
         path: '/groupIdeo',
         component: Mine,
     },
+     // 集团价值观
+     {
+        path: '/groupValues',
+        component: Mine,
+    },
+     // 集团战略
+     {
+        path: '/groupStrategy',
+        component: Mine,
+    },
     // 经营理念
     {
         path: '/managementIdea',
+        component: Mine,
+    },
+    //  // 新闻中心
+     {
+        path: '/newsCenter',
         component: Mine,
     },
     // 业务领域

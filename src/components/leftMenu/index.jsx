@@ -12,7 +12,10 @@ const [defaultValue,setDefaultValue] = useState(window.location.pathname.substri
     const items = [
         { label: '集团简介', key: 'groupProfile' }, // 菜单项务必填写 key
         { label: '集团视频', key: 'groupIdeo' },
+        { label: '集团价值观', key: 'groupValues' },
+        { label: '集团战略', key: 'groupStrategy' },
         { label: '经营理念', key: 'managementIdea' },
+        { label: '新闻中心', key: 'newsCenter' },
         { label: '业务领域', key: 'businessArea' },
         { label: '联系我们', key: 'contactUs' },
     ];
@@ -60,7 +63,7 @@ const [defaultValue,setDefaultValue] = useState(window.location.pathname.substri
                                 网址：www.cieg.com.cn
                             </p>
                             <p>
-                                地址：北京市东城区东总布胡同58号中国国能天润财富中心B11层A
+                                地址：重庆市渝北区联盛大厦
                             </p>
                         </div>
                     </div>

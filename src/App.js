@@ -13,7 +13,7 @@ import { outputStaticUrl } from "./config/outputStaticUrl";
 export default memo(function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter basename={outputStaticUrl()}>
+      <BrowserRouter basename={outputStaticUrl()} >
         <Header></Header>
         {renderRoutes(routes)}
         <Footer></Footer>

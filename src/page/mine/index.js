@@ -1,6 +1,6 @@
-import React, { memo, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import LeftMenu from '../../components/leftMenu';
-import Ditu from '../../components/ditu.js'
+import NewChild from '../../page/newChild'
 import './index.css';
 import { Map, InfoWindow } from 'react-amap';
 const imgUrl = require('../../assets/img/tabImg.jpg');
@@ -27,6 +27,10 @@ const Mine = (props) => {
         console.log(value, 'value');
         setSeState(value.key)
     }
+    useEffect(()=>{
+        setSeState(window.location.pathname.substring(1))
+        console.log(window.location.pathname.substring(1),'1111');
+    },[])
     return (
         <div >
             <div style={{ height: '350px' }}>
@@ -67,6 +71,19 @@ const Mine = (props) => {
                 </div>
                 }
                 {/* 集团视频 */}
+                {
+                    selectData === 'newsCenter' && <div className="abr">
+                        <div className="abrb">
+                            <h2>新闻中心</h2>
+                            <p><img src="images/ab_08.png" />当前位置：新闻中心</p>
+                        </div>
+                        <div className="abcont">
+
+                           <NewChild />
+                        </div>
+                    </div>
+
+                }
                 {
                     selectData === 'groupIdeo' && <div className="abr">
                         <div className="abrb">

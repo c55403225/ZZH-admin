@@ -151,19 +151,20 @@ const internationalConsulting = [
         title: '康菲石油称全球原油需求正复原 '
     }
 ]
-export default memo(function News() {
+const News = (props) => {
     const [current, setCurrent] = useState('mail');
     const [value, setValue] = useState(dynamic);
-    const onClick = (e ) => {
-        
+    const onClick = (e) => {
+
         //tab切换
-        if(e.key === 'dynamic') setValue(dynamic);
-        if(e.key === 'report') setValue(report);
-        if(e.key === 'domesticInformation') setValue(domesticInformation);
-        if(e.key === 'internationalConsulting') setValue(internationalConsulting);
-        console.log('click',e.key);
-        
+        if (e.key === 'dynamic') setValue(dynamic);
+        if (e.key === 'report') setValue(report);
+        if (e.key === 'domesticInformation') setValue(domesticInformation);
+        if (e.key === 'internationalConsulting') setValue(internationalConsulting);
+        console.log('click', e.key);
+
     };
+    console.log(props, 'props1');
     const scrollFnc = (e) => {
         console.log(e, 'e');
     }
@@ -175,12 +176,13 @@ export default memo(function News() {
                     <h2 className='h2Style' style={{ color: '#000' }}>新闻中心</h2>
                 </div>
                 <div style={{ position: 'absolute', top: '50%', right: '15%' }}>
-                    <Menu onClick={(e)=>onClick( e )} selectedKeys={[current]} mode="horizontal" items={items} style={{ background: 'rgba(0,0,0,.005)' }} />
+                    <Menu onClick={(e) => onClick(e)} selectedKeys={[current]} mode="horizontal" items={items} style={{ background: 'rgba(0,0,0,.005)' }} />
                 </div>
             </div>
             <Row>
-                <Cards value={value} key={value}/>
+                <Cards value={value} key={value} {...props} onClick={() => console.log('6666')} />
             </Row>
         </div>
     )
-})
+}
+export default News
